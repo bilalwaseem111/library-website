@@ -53,8 +53,11 @@ export default function Library() {
   };
 
   const exportCSV = () => {
+    if (typeof window === 'undefined') return; // Prevent SSR error
+
     const csvContent = 'data:text/csv;charset=utf-8,' +
       ['Title,Author,Genre,Year', ...books.map(book => `${book.Title},${book.Author},${book.Genre},${book.Year}`)].join('\n');
+
     const encodedUri = encodeURI(csvContent);
     const link = document.createElement('a');
     link.setAttribute('href', encodedUri);
@@ -262,12 +265,3 @@ const styles = {
     fontSize: '1rem',
   },
 };
-
-const styleSheet = document.styleSheets[0];
-const keyframes = `
-@keyframes gradientAnimation {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}`;
-styleSheet.insertRule(keyframes, styleSheet.cssRules.length);
