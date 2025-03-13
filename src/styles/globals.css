@@ -114,6 +114,12 @@
   height: 60px;
   border-radius: 20%;
 }
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 
 /* Add the gradientAnimation keyframes here */
 @keyframes gradientAnimation {
