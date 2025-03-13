@@ -3,6 +3,8 @@ import Header from '@/components/Header';
 import { motion } from 'framer-motion';
 import { useAnimation } from 'framer-motion';
 import { useState } from 'react';
+import Link from 'next/link'; // Import Link for internal navigation
+import Image from 'next/image'; // Import Image for optimized images
 
 export default function Home() {
   const controls = useAnimation();
@@ -31,7 +33,6 @@ export default function Home() {
 
       <main style={styles.main}>
         <div style={styles.content}>
-
           {/* Heading */}
           <motion.h1
             initial={{ y: -50, opacity: 0 }}
@@ -75,9 +76,9 @@ export default function Home() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.5 }}
           >
-            <a href="/library" style={styles.button}>
-              📖 Explore Library
-            </a>
+            <Link href="/library" passHref legacyBehavior>
+              <a style={styles.button}>📖 Explore Library</a>
+            </Link>
           </motion.div>
 
           {/* Footer with LinkedIn Logo and Let's Connect */}
@@ -91,7 +92,7 @@ export default function Home() {
             <p className="white-glow-text">Made by Bilal Waseem</p>
 
             <div style={styles.connectWrapper}>
-              <p style={styles.connectText}>Let's Connect 👉</p>
+              <p style={styles.connectText}>Let&apos;s Connect 👉</p>
 
               <motion.a
                 href="https://www.linkedin.com/in/bilal-waseem-b44006338"
@@ -114,16 +115,17 @@ export default function Home() {
                   overflow: 'hidden',
                 }}
               >
-                <img
+                <Image
                   src="/logo.webp"
                   alt="LinkedIn Logo"
+                  width={80}
+                  height={80}
                   style={styles.logo}
                 />
                 <div style={styles.shine}></div>
               </motion.a>
             </div>
           </motion.div>
-
         </div>
       </main>
 
