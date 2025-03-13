@@ -43,7 +43,7 @@ export default function About() {
             transition={{ delay: 0.3, duration: 1 }}
             style={styles.paragraph}
           >
-            Welcome to <strong>Bilal Waseem's Personal Library</strong>! 📚 An app designed to simplify how you manage and track your personal book collection.
+            Welcome to <strong>Bilal Waseem&apos;s Personal Library</strong>! 📚 An app designed to simplify how you manage and track your personal book collection.
           </motion.p>
 
           {/* Developer Info Section */}
@@ -70,7 +70,7 @@ export default function About() {
 
           {/* What's Next Section */}
           <motion.section style={styles.section} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.9 }}>
-            <h2 style={styles.sectionHeading}>🚀 What's Next?</h2>
+            <h2 style={styles.sectionHeading}>🚀 What&apos;s Next?</h2>
             <ul style={styles.list}>
               <li>🔍 Advanced Search & Filter Options</li>
               <li>📈 Reading Statistics & Progress Tracker</li>
